@@ -1,0 +1,7 @@
+/*
+Contains a full program flow.
+All classes are used.
+All functions can be tested.
+User has some kind of input.
+Has a natural way to end the program
+*/
