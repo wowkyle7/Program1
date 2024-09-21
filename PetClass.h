@@ -1,5 +1,5 @@
-#ifndef PET_H
-#define PET_H
+#ifndef PETCLASS_H
+#define PETCLASS_H
 
 #include <iostream>
 #include <iomanip>

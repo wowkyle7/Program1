@@ -2,3 +2,11 @@
 //  Data stored is the data class
 //      ex. parking lot, toy box, etc
 //      requirements: be able to read items from a file, be able to print the contents to the screen
+#include "PetStoreClass.h"
+#include <iomanip>
+
+        void readToFile();
+        void readFromFile();
+        void PetStore::printAll(){
+                customer->getName();
+        }
