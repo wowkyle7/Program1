@@ -1,5 +1,5 @@
-#ifndef CUSTOMOR_H
-#define CUSTOMOR_H
+#ifndef CUSTOMORCLASS_H
+#define CUSTOMORCLASS_H
 
 #include <iostream>
 #include <iomanip>
@@ -10,21 +10,19 @@ class Customer{
 
     private:
         string name;
-        string* otherPets;
+        // string* otherPets; 
         int age;
         double maxBudget;
 
-
-
     public:
         //Constrcutors
-        Info();
-        Info(string, string*, int, double);
+        // Info();
+        // Info(string, string*, int, double);
 
-        string name() const;
-        string* otherPets() const;
-        int age() const;
-        double maxBudget() const;
+        string getName() const;
+        // string* otherPets() const;
+        int getAge() const;
+        double getMaxBudget() const;
 
         void custName(string);
         void getOtherPets(string*);

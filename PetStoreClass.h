@@ -1,21 +1,27 @@
 #ifndef PETSTORE_H
 #define PETSTORE_H
 
-#include "Customor.h"
-#include "Pet.h"
+#include <iostream>
+#include "CustomerClass.h"
+#include "PetClass.h"
+
+using namespace std;
 
 class PetStore{
     private:
-        Customor** loyalCustomors;
-        Pet** petsInStore; 
-    
+        Customer* customer;
+        Pet* pet; 
+
     public:
-        void addCustumor(Custumor*);
-        void deleteCustumor(Custumor*);
-        void addPet(Pet*);
-        void deletePet(Pet*);
-        void printCustumors(Custumor*);
-        void printPets(Pet*);
+        // default constructor
+        PetStore();
+
+        // deconstructor
+        ~PetStore();
+        
+        void readToFile();
+        void readFromFile();
+        void printAll();
 
 };
 
