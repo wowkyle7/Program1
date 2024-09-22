@@ -10,29 +10,27 @@ class Pet
 {
     private: 
         string species; 
-        string name;
         char sex; 
         int age;
-        double price; 
+        double price;
+        // still need pointer variable
 
     public: 
-    // Constructors
-    Pet();
-    Pet(string, string, char, int, double); 
+        // Constructors
+        Pet();
+        Pet(string, string, char, int, double); 
 
-    // Accessors 
-    string getSpecies() const;
-    string getName() const; 
-    char getSex() const; 
-    int getAge() const; 
-    double getPrice() const; 
+        // Accessors 
+        string getSpecies() const;
+        char getSex() const; 
+        int getAge() const; 
+        double getPrice() const; 
 
-    // Mutators (Setters)
-    void setSpecies(string s); 
-    void setName(string n);
-    void getSex(char g); 
-    void setAge(int a); 
-    void setPrice(double p); 
+        // Mutators (Setters)
+        void setSpecies(string s); 
+        void getSex(char g); 
+        void setAge(int a); 
+        void setPrice(double p); 
 
 };
 

@@ -10,24 +10,24 @@ class Customer{
 
     private:
         string name;
-        // string* otherPets; 
+        int* phoneNumber;
         int age;
         double maxBudget;
 
     public:
-        //Constrcutors
-        // Info();
-        // Info(string, string*, int, double);
+        // Constrcutors
+         Customer();
+         Customer(string, string*, int, double);
 
         string getName() const;
-        // string* otherPets() const;
+        int* getPhoneNumber() const;
         int getAge() const;
         double getMaxBudget() const;
 
-        void custName(string);
-        void getOtherPets(string*);
-        void custAge(int);
-        void getMaxBudget(double);
+        void setName(string);
+        void setPhoneNumber(int*);
+        void setAge(int);
+        void setMaxBudget(double);
 
 
 
