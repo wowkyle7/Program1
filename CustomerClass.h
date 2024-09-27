@@ -13,11 +13,11 @@ class Customer{
         int* phoneNumber;
         int age;
         double maxBudget;
-
+        
     public:
         // Constrcutors
-         Customer();
-         Customer(string, string*, int, double);
+        Customer();
+        Customer(string, string*, int, double);
 
         string getName() const;
         int* getPhoneNumber() const;

@@ -5,9 +5,15 @@
 #include "PetStoreClass.h"
 
 // default constructor
+PetStore::PetStore(){
 
+}
 
 // overloaded constructor
+PetStore::PetStoreOC(int p, int c){
+        pet = new Pet[p];
+        customer = new Customer[c];
+}
 
 
 // destructor
@@ -24,23 +30,26 @@ void PetStore::readFromFile(){
 
 }
 
-void PetStore::printCustomers(){
-        for(int i = 0; i < ){
-                cout << "CUSTOMER INFORMATION" << string('*' , 20) << endl;
-                cout << "Name: " << customer->getName();
-        }
+void PetStore::printCustomers(int index){
+        cout << setprecision(2);
+        cout << "Name: " << customer[index].getName();
+        cout << "Age: " << customer[index].getAge();
+        cout << "Phone number: " << customer[index].getPhoneNumber();
+        cout << "Budget: $" << customer[index].getMaxBudget();
 }
 
-void PetStore::printCustomers(){
-
-}
-
-void PetStore::printPets(){
-
+void PetStore::printPets(int index){
+        cout << setprecision(2);
+        cout << "Species: " << pet[index].getSpecies();
+        cout << "Sex: " << pet[index].getSex();
+        cout << "Age: " << pet[index].getAge();
+        cout << "Price: $" << pet[index].getPrice();
 }
 
 void PetStore::addCustomer(){
-
+        customer[index].setSpecies(species);
+        customer[index].setAge(age);
+        customer[index].setPrice(price);
 }
 
 void PetStore::addPet(int index, string species, int age, double price){

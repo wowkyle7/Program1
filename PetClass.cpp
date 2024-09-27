@@ -3,20 +3,19 @@
 // Default 
 Pet::Pet()
 {
-    species;
-    name = ""; 
-    sex = ''; 
+    *species = ' ';
+    sex = ' '; 
     age = 0; 
     price = 0.00; 
 }
 
 // Overloaded 
-Pet::Pet(string, string, char, int, double)
+Pet::Pet(string s, char g, int a, double p)
 {
-    species = s; 
-    name = n;
-    sex = s; 
+    for(int i = 0; i < s.size(); i++){
+        species[i] = s.at(i);
+    } 
+    sex = g; 
     age = a; 
     price = p; 
 }
-

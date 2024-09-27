@@ -20,7 +20,7 @@ class PetStore{
         PetStore();
 
         // overloaded constructor
-        PetStore(Customer*, Pet*, int, int);
+        PetStoreOC(int, int);
 
         // deconstructor
         ~PetStore();
@@ -28,8 +28,8 @@ class PetStore{
         // functions
         void readToFile();
         void readFromFile();
-        void printCustomers();
-        void printPets();
+        void printCustomers(int);
+        void printPets(int);
         void addCustomer();
         void addPet(int, string, int, double);
         void deleteCustomer();
