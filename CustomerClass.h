@@ -17,20 +17,19 @@ class Customer{
     public:
         // Constrcutors
         Customer();
-        Customer(string, string*, int, double);
+        Customer(string, int*, int, double);
 
+        // Accessors
         string getName() const;
         int* getPhoneNumber() const;
         int getAge() const;
         double getMaxBudget() const;
 
-        void setName(string);
+        // Mutators (Setters)
+        void setName(string);   
         void setPhoneNumber(int*);
         void setAge(int);
         void setMaxBudget(double);
-
-
-
 };
 
 #endif

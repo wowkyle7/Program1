@@ -12,26 +12,21 @@ class PetStore{
         // variables
         Customer* customer;
         Pet* pet; 
-        int numOfPets;
-        int numOfCustomers;
 
     public:
         // default constructor
         PetStore();
 
         // overloaded constructor
-        PetStoreOC(int, int);
+        PetStore(int, int);
 
         // deconstructor
         ~PetStore();
         
         // functions
-        void readToFile();
-        void readFromFile();
-        void printCustomers(int);
-        void printPets(int);
-        void addCustomer();
-        void addPet(int, string, int, double);
+        void printAll(int, int);
+        void addCustomer(int, string, char*, int, double);
+        void addPet(string, int*, int, double);
         void deleteCustomer();
         void deletePet();
 

@@ -10,7 +10,7 @@ PetStore::PetStore(){
 }
 
 // overloaded constructor
-PetStore::PetStoreOC(int p, int c){
+PetStore::PetStore(int p, int c){
         pet = new Pet[p];
         customer = new Customer[c];
 }
@@ -22,41 +22,29 @@ PetStore::~PetStore(){
         delete [] customer;
 }
 
-void PetStore::readToFile(){
 
-}
-
-void PetStore::readFromFile(){
-
-}
-
-void PetStore::printCustomers(int index){
+void PetStore::printAll(int P_ArrSize, int C_ArrSize){
         cout << setprecision(2);
-        cout << "Name: " << customer[index].getName();
-        cout << "Age: " << customer[index].getAge();
-        cout << "Phone number: " << customer[index].getPhoneNumber();
-        cout << "Budget: $" << customer[index].getMaxBudget();
+        cout << "CUSTOMER DATA" << endl;
+        for(int i = 0; i < C_ArrSize; i++){
+                cout << "Customer " << i+1 << endl;
+                cout << "Name: " << customer[i].getName();
+                cout << "Phone Number: ";
+                for(int j = 0; j < 10; j++){
+                        cout << customer[i].getPhoneNumber();
+                }
+                cout << "Age: " << customer[i].getAge();
+                cout << "Max Budget: $" << customer[i].getMaxBudget();
+        }
 }
 
-void PetStore::printPets(int index){
-        cout << setprecision(2);
-        cout << "Species: " << pet[index].getSpecies();
-        cout << "Sex: " << pet[index].getSex();
-        cout << "Age: " << pet[index].getAge();
-        cout << "Price: $" << pet[index].getPrice();
-}
+// void PetStore::addCustomer(){
+        
+// }
 
-void PetStore::addCustomer(){
-        customer[index].setSpecies(species);
-        customer[index].setAge(age);
-        customer[index].setPrice(price);
-}
+// void PetStore::addPet(){
 
-void PetStore::addPet(int index, string species, int age, double price){
-        pet[index].setSpecies(species);
-        pet[index].setAge(age);
-        pet[index].setPrice(price);
-}
+// }
 
 void PetStore::deleteCustomer(){
 

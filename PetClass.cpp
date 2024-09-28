@@ -19,3 +19,22 @@ Pet::Pet(string s, char g, int a, double p)
     age = a; 
     price = p; 
 }
+
+// Accessors 
+char* Pet::getSpecies() const
+{
+    return species; 
+}
+char Pet::getSex() const
+{
+    return sex; 
+}
+int Pet::getAge() const
+{
+    return age; 
+}
+double Pet::getPrice() const
+{
+    return price; 
+}
+
