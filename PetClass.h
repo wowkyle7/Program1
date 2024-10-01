@@ -9,7 +9,7 @@ using namespace std;
 class Pet 
 {
     private: 
-        char* species; 
+        string species; 
         char sex; 
         int age;
         double price;
@@ -20,17 +20,18 @@ class Pet
         Pet(string, char, int, double); 
 
         // Accessors 
-        char* getSpecies() const;
+        string getSpecies() const;
         char getSex() const; 
         int getAge() const; 
         double getPrice() const; 
 
         // Mutators (Setters)
-        void setSpecies(char* s); 
+        void setSpecies(string s); 
         void getSex(char g); 
         void setAge(int a); 
         void setPrice(double p); 
 
+        void printPet();
 };
 
 

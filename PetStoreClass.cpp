@@ -24,27 +24,25 @@ PetStore::~PetStore(){
 
 
 void PetStore::printAll(int P_ArrSize, int C_ArrSize){
-        cout << setprecision(2);
-        cout << "CUSTOMER DATA" << endl;
+        cout << "--PET INFORMATION--" << endl;
+        for(int i = 0; i < P_ArrSize; i++){
+                cout << "Pet " << i+1 << endl;
+                pet[i].printPet();
+        }
+        cout << "--CUSTOMER INFORMATION--" << endl;
         for(int i = 0; i < C_ArrSize; i++){
                 cout << "Customer " << i+1 << endl;
-                cout << "Name: " << customer[i].getName();
-                cout << "Phone Number: ";
-                for(int j = 0; j < 10; j++){
-                        cout << customer[i].getPhoneNumber();
-                }
-                cout << "Age: " << customer[i].getAge();
-                cout << "Max Budget: $" << customer[i].getMaxBudget();
+                customer[i].printCustomer();
         }
 }
 
-// void PetStore::addCustomer(){
+void PetStore::addCustomer(){
         
-// }
+}
 
-// void PetStore::addPet(){
+void PetStore::addPet(){
 
-// }
+}
 
 void PetStore::deleteCustomer(){
 

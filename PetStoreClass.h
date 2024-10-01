@@ -25,8 +25,8 @@ class PetStore{
         
         // functions
         void printAll(int, int);
-        void addCustomer(int, string, char*, int, double);
-        void addPet(string, int*, int, double);
+        void addCustomer(int, string, int, double);
+        void addPet(string, char, int, double);
         void deleteCustomer();
         void deletePet();
 

@@ -3,7 +3,7 @@
 // Default 
 Pet::Pet()
 {
-    *species = ' ';
+    species = " ";
     sex = ' '; 
     age = 0; 
     price = 0.00; 
@@ -12,16 +12,14 @@ Pet::Pet()
 // Overloaded 
 Pet::Pet(string s, char g, int a, double p)
 {
-    for(int i = 0; i < s.size(); i++){
-        species[i] = s.at(i);
-    } 
+    species = s;
     sex = g; 
     age = a; 
     price = p; 
 }
 
 // Accessors 
-char* Pet::getSpecies() const
+string Pet::getSpecies() const
 {
     return species; 
 }
@@ -38,3 +36,11 @@ double Pet::getPrice() const
     return price; 
 }
 
+// Function
+void Pet::printPet(){
+    cout << setprecision(2);
+    cout << "Species: " << species << endl;
+    cout << "Sex: " << toupper(sex) << endl;
+    cout << "Age: " << age << endl;
+    cout << "Price: $" << price << endl;
+}

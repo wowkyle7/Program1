@@ -30,6 +30,9 @@ class Customer{
         void setPhoneNumber(int*);
         void setAge(int);
         void setMaxBudget(double);
+
+        // fucntions
+        void printCustomer();
 };
 
 #endif
