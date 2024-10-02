@@ -8,30 +8,17 @@ using namespace std;
 
 class Customer{
 
-    private:
+    public:
         string name;
         int* phoneNumber;
         int age;
         double maxBudget;
         
-    public:
         // Constrcutors
         Customer();
         Customer(string, int*, int, double);
 
-        // Accessors
-        string getName() const;
-        int* getPhoneNumber() const;
-        int getAge() const;
-        double getMaxBudget() const;
-
-        // Mutators (Setters)
-        void setName(string);   
-        void setPhoneNumber(int*);
-        void setAge(int);
-        void setMaxBudget(double);
-
-        // fucntions
+        // functions
         void printCustomer();
 };
 
