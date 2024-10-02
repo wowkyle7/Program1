@@ -6,6 +6,7 @@
 
 // destructor
 PetStore::~PetStore(){
+
         delete [] pet;
         delete [] customer;
 }
