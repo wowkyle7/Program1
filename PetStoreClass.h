@@ -14,22 +14,16 @@ class PetStore{
         Pet* pet; 
 
     public:
-        // default constructor
-        PetStore();
-
-        // overloaded constructor
-        PetStore(int, int);
-
         // deconstructor
         ~PetStore();
         
         // functions
         void printAll(int, int);
-        void addCustomer(int, string, int, double);
-        void addPet(string, char, int, double);
-        void deleteCustomer();
-        void deletePet();
-
+        int addCustomer(string, int*, int, double, int);
+        int addPet(string, char, int, double, int);
+        int deleteCustomer(int);
+        int deletePet(int);
+        void setArrSize(int, int);
 };
 
 #endif

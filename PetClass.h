@@ -27,7 +27,7 @@ class Pet
 
         // Mutators (Setters)
         void setSpecies(string s); 
-        void getSex(char g); 
+        void setSex(char g); 
         void setAge(int a); 
         void setPrice(double p); 
 

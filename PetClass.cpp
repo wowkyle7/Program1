@@ -36,11 +36,25 @@ double Pet::getPrice() const
     return price; 
 }
 
+// Getters
+void Pet::setSpecies(string s){
+    species = s;
+} 
+void Pet::setSex(char g){
+    sex = g;
+} 
+void Pet::setAge(int a){
+    age = a;
+}
+void Pet::setPrice(double p){
+    price = p;
+}
+
 // Function
 void Pet::printPet(){
-    cout << setprecision(2);
-    cout << "Species: " << species << endl;
-    cout << "Sex: " << toupper(sex) << endl;
-    cout << "Age: " << age << endl;
-    cout << "Price: $" << price << endl;
+    cout << fixed << setprecision(2);
+    cout << "Species:\t" << species << endl;
+    cout << "Sex:\t\t" << toupper(sex) << endl;
+    cout << "Age:\t\t" << age << endl;
+    cout << "Price:\t\t$" << price << endl;
 }
