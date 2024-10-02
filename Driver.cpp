@@ -17,8 +17,6 @@ int main(){
     int temp_customer_age;
     double temp_customer_budget;
     customer_num_as_int = new int[10];
-    for(int i = 0; i < 10; i++)
-        customer_num_as_int[i] = 0;
 
     // temp variables for pet
     string temp_pet_species;
@@ -59,12 +57,16 @@ int main(){
                 break;
 
             case 1: // ADD CUSTOMER TO PETSTORE
+                for(int i = 0; i < 10; i++)
+                    customer_num_as_int[i] = 0;
                 cout << "\nADD CUSTOMER" << endl;
                 cout << "Please Enter Name:\t\t\t";
                 cin.ignore();
                 getline(cin, temp_customer_name);
-                cout << "Please enter a TEN digit phone number:\t";
-                getline(cin, temp_customer_num);
+                do{
+                    cout << "Please enter a TEN digit phone number:\t";
+                    getline(cin, temp_customer_num);
+                }while(temp_customer_num.length() > 10);
                 cout << "Please enter age:\t\t\t";
                 cin >> temp_customer_age;
                 cout << "Please enter in your max budget:\t$";

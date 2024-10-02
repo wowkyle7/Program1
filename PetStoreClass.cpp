@@ -23,6 +23,7 @@ void PetStore::printAll(int c_index, int p_index){
 }
 
 int PetStore::addCustomer(string n, int* p, int a, double b, int index){
+        
         // Add Customer variables using constructor
         customer[index] = Customer(n,p,a,b);
 
