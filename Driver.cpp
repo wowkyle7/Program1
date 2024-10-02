@@ -1,11 +1,3 @@
-/*
-Contains a full program flow.
-All classes are used.
-All functions can be tested.
-User has some kind of input.
-Has a natural way to end the program
-*/
-
 #include "PetClass.h"
 #include "CustomerClass.h"
 #include "PetStoreClass.h"
@@ -26,7 +18,7 @@ int main(){
     double temp_customer_budget;
     customer_num_as_int = new int[10];
     for(int i = 0; i < 10; i++)
-        customer_num_as_int[i] = -1;
+        customer_num_as_int[i] = 0;
 
     // temp variables for pet
     string temp_pet_species;
@@ -34,11 +26,17 @@ int main(){
     int temp_pet_age;
     double temp_pet_price;
 
-    cout << "\nEnter max number of customers:\t";
-    cin >> C_SIZE;
-    cout << "\nEnter max number of pets:\t";
-    cin >> P_SIZE;
+    // prompt user for max array size
+    do{
+        cout << "\nEnter max number of customers:\t";
+        cin >> C_SIZE;
+    }while(C_SIZE < 1);
+    do{
+        cout << "\nEnter max number of pets:\t";
+        cin >> P_SIZE;
+    }while(P_SIZE < 1);
 
+    // dynamically allocate pointers to max sizes
     petStore.setArrSize(C_SIZE, P_SIZE);
 
     cout << endl;
@@ -50,9 +48,7 @@ int main(){
         cout << "3. Delete Customer" << endl;
         cout << "4. Delete Pet" << endl;
         cout << "5. Print All" << endl;
-        cout << "6. Save to File" << endl;
-        cout << "7. Load from File" << endl;
-        cout << "8. Exit Program" << endl;
+        cout << "6. Exit Program" << endl;
 
         cout << "\nEnter Choice: ";
         cin >> menuChoice;
@@ -62,7 +58,7 @@ int main(){
                 cout << "Invalid input!";
                 break;
 
-            case 1:
+            case 1: // ADD CUSTOMER TO PETSTORE
                 cout << "\nADD CUSTOMER" << endl;
                 cout << "Please Enter Name:\t\t\t";
                 cin.ignore();
@@ -78,26 +74,26 @@ int main(){
                 for(int i = 0; i < temp_customer_num.length(); i++)
                     customer_num_as_int[i] = int(temp_customer_num.at(i) - '0');
                 current_c_index = petStore.addCustomer(temp_customer_name, customer_num_as_int, temp_customer_age, temp_customer_budget, current_c_index);
-                cout << current_c_index;
                 break;
 
-            case 2:
+            case 2: // ADD PET TO PETSTORE
                 cout << "\nADD PET" << endl;
                 cout << "Please enter species:\t\t";
                 cin.ignore();
                 getline(cin, temp_pet_species);
                 cout << "Please enter sex (M or F):\t";
                 cin >> temp_pet_sex;
+                temp_pet_sex = toupper(temp_pet_sex);
                 cout << "Please enter age:\t\t";
                 cin >> temp_pet_age;
                 cout << "Please enter price:\t\t$";
                 cin >> temp_pet_price;
 
-                current_p_index = petStore.addPet(temp_pet_species, toupper(temp_pet_sex), temp_pet_age, temp_pet_price, current_p_index);
+                current_p_index = petStore.addPet(temp_pet_species, temp_pet_sex, temp_pet_age, temp_pet_price, current_p_index);
                
                 break;
 
-            case 3:
+            case 3: // DELETE CUSTOMER FROM PETSTORE
                 if(current_c_index != 0){
                     current_c_index = petStore.deleteCustomer(current_c_index);
                     cout << "\nMost Recent Customer Entry Deleted" << endl;
@@ -106,7 +102,7 @@ int main(){
                     cout << "\nNo Customer Data to Delete!" << endl;
                 break;
 
-            case 4:
+            case 4: // DELETE PET FROM PETSTORE
                 if(current_p_index != 0){
                     current_p_index = petStore.deletePet(current_p_index);
                     cout << "\nMost Recent Pet Entry Deleted" << endl;
@@ -115,22 +111,16 @@ int main(){
                     cout << "\nNo Pet Data to Delete!" << endl;
                 break;
 
-            case 5:
+            case 5: // PRINT ALL PETS & CUSTOMERS
                 petStore.printAll(current_c_index, current_p_index);
                 break;
-                
-            case 6:
-                break; 
-            
-            case 7:
-                break; 
-            case 8:
+            case 6: // RELEASE POINTERS
+                delete [] customer_num_as_int;
                 petStore.~PetStore();
                 cout << "\nHave a good day!" << endl;
                 break;
         }
-    }while(menuChoice != 8);
+    }while(menuChoice != 6);
     
-
     return 0;
 }

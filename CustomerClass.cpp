@@ -1,7 +1,3 @@
-//  Is either top-level or bottom-level
-//      can be used as a median between the driver and storage
-//      can be used as a sub data in the class
-//  contains at least one pointer
 #include "CustomerClass.h"
 
 Customer::Customer(){
@@ -16,6 +12,10 @@ Customer::Customer(string n, int* p, int a, double b){
     phoneNumber = p;
     age = a;
     maxBudget = b;
+}
+
+Customer::~Customer(){
+    delete [] phoneNumber;
 }
 
 void Customer::printCustomer(){

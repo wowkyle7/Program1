@@ -18,6 +18,10 @@ Pet::Pet(string s, char g, int a, double p)
     price = p; 
 }
 
+Pet::~Pet(){
+
+}
+
 // Accessors 
 string Pet::getSpecies() const
 {
@@ -54,7 +58,7 @@ void Pet::setPrice(double p){
 void Pet::printPet(){
     cout << fixed << setprecision(2);
     cout << "Species:\t" << species << endl;
-    cout << "Sex:\t\t" << toupper(sex) << endl;
+    cout << "Sex:\t\t" << sex << endl;
     cout << "Age:\t\t" << age << endl;
     cout << "Price:\t\t$" << price << endl;
 }

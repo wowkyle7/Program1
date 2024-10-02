@@ -18,6 +18,8 @@ class Customer{
         Customer();
         Customer(string, int*, int, double);
 
+        ~Customer();
+
         // functions
         void printCustomer();
 };

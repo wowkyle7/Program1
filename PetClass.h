@@ -8,7 +8,8 @@ using namespace std;
 
 class Pet 
 {
-    private: 
+    private:
+        // Variables 
         string species; 
         char sex; 
         int age;
@@ -18,6 +19,9 @@ class Pet
         // Constructors
         Pet();
         Pet(string, char, int, double); 
+        
+        // Deconstructor
+        ~Pet();
 
         // Accessors 
         string getSpecies() const;
