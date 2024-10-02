@@ -3,28 +3,37 @@
 // Default 
 Pet::Pet()
 {
-    species = " ";
+    species = new char[STR_SIZE];
+    for(int i = 0; i < STR_SIZE; i++)
+        species[i] = '\0';
     sex = ' '; 
-    age = 0; 
-    price = 0.00; 
+    age = -1; 
+    price = -1.0; 
 }
 
 // Overloaded 
 Pet::Pet(string s, char g, int a, double p)
 {
-    species = s;
+    species = new char[STR_SIZE];
+    for(int i = 0; i < STR_SIZE; i++)
+        species[i] = '\0';
+    for(int i = 0; i < s.length(); i++)
+        species[i] = s.at(i);
     sex = g; 
     age = a; 
     price = p; 
 }
 
 Pet::~Pet(){
-
+    delete [] species;
 }
 
 // Accessors 
 string Pet::getSpecies() const
 {
+    string s;
+    for(int i = 0; i < s.length(); i++)
+        s.at(i) = species[i];
     return species; 
 }
 char Pet::getSex() const
@@ -42,7 +51,11 @@ double Pet::getPrice() const
 
 // Getters
 void Pet::setSpecies(string s){
-    species = s;
+    species = new char[STR_SIZE];
+    for(int i = 0; i < STR_SIZE; i++)
+        species[i] = '\0';
+    for(int i = 0; i < s.length(); i++)
+        species[i] = s.at(i);
 } 
 void Pet::setSex(char g){
     sex = g;

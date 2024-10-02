@@ -78,15 +78,17 @@ int main(){
 
             case 2: // ADD PET TO PETSTORE
                 cout << "\nADD PET" << endl;
-                cout << "Please enter species:\t\t";
-                cin.ignore();
-                getline(cin, temp_pet_species);
-                cout << "Please enter sex (M or F):\t";
+                do{
+                    cout << "Please enter species (max " << STR_SIZE << " characters):\t";
+                    cin.ignore();
+                    getline(cin, temp_pet_species);
+                }while(temp_pet_species.length() > STR_SIZE);
+                cout << "Please enter sex (M or F):\t\t\t";
                 cin >> temp_pet_sex;
                 temp_pet_sex = toupper(temp_pet_sex);
-                cout << "Please enter age:\t\t";
+                cout << "Please enter age:\t\t\t\t";
                 cin >> temp_pet_age;
-                cout << "Please enter price:\t\t$";
+                cout << "Please enter price:\t\t\t\t$";
                 cin >> temp_pet_price;
 
                 current_p_index = petStore.addPet(temp_pet_species, temp_pet_sex, temp_pet_age, temp_pet_price, current_p_index);
@@ -114,9 +116,8 @@ int main(){
             case 5: // PRINT ALL PETS & CUSTOMERS
                 petStore.printAll(current_c_index, current_p_index);
                 break;
-            case 6: // RELEASE POINTERS
+            case 6: // EXIT PROGRAM
                 delete [] customer_num_as_int;
-                petStore.~PetStore();
                 cout << "\nHave a good day!" << endl;
                 break;
         }

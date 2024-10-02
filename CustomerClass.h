@@ -14,13 +14,16 @@ class Customer{
         int age;
         double maxBudget;
         
-        // Constructors
+        // Default constructors
         Customer();
+
+        // Overloaded constructor
         Customer(string, int*, int, double);
 
+        // Deconstructor
         ~Customer();
 
-        // functions
+        // Functions
         void printCustomer();
 };
 

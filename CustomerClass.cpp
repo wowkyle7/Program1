@@ -1,15 +1,19 @@
 #include "CustomerClass.h"
 
 Customer::Customer(){
-    name = " ";
-    phoneNumber = 0;
-    age = 0;
-    maxBudget = 0.0;
+    phoneNumber = new int[10];
+    name = "null";
+    for(int i = 0; i < 10; i++)
+        phoneNumber[i] = 0;
+    age = -1;
+    maxBudget = -1.0;
 }
 
 Customer::Customer(string n, int* p, int a, double b){
+    phoneNumber = new int[10];
     name = n;
-    phoneNumber = p;
+    for(int i = 0; i < 10; i++)
+        phoneNumber[i] = p[i];
     age = a;
     maxBudget = b;
 }

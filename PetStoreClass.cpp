@@ -23,15 +23,14 @@ void PetStore::printAll(int c_index, int p_index){
 }
 
 int PetStore::addCustomer(string n, int* p, int a, double b, int index){
-        customer[index].name = n;
-        customer[index].phoneNumber = p;
-        customer[index].age = a;
-        customer[index].maxBudget = b;
+        // Add Customer variables using constructor
+        customer[index] = Customer(n,p,a,b);
 
         return index+1;
 }
 
 int PetStore::addPet(string s, char g, int a, double p, int index){
+        // Add Pet variables using setters
         pet[index].setSpecies(s);
         pet[index].setSex(g);
         pet[index].setAge(a);

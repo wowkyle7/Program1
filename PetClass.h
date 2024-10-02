@@ -6,18 +6,21 @@
 
 using namespace std;
 
+const int STR_SIZE = 30;
 class Pet 
 {
     private:
         // Variables 
-        string species; 
+        char* species; 
         char sex; 
         int age;
         double price;
 
     public: 
-        // Constructors
+        // Default Constructor
         Pet();
+
+        // Overloaded Constructor
         Pet(string, char, int, double); 
         
         // Deconstructor
@@ -35,10 +38,8 @@ class Pet
         void setAge(int a); 
         void setPrice(double p); 
 
+        // Function(s)
         void printPet();
 };
 
-
-
 #endif
-
