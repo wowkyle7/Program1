@@ -41,7 +41,7 @@ int main(){
     do{
         // print menu
         cout << endl << endl << string(20, '*') << " MENU " << string(20, '*') << endl;
-        cout << "1. Add Custumer" << endl;
+        cout << "1. Add Customer" << endl;
         cout << "2. Add Pet" << endl;
         cout << "3. Delete Customer" << endl;
         cout << "4. Delete Pet" << endl;
@@ -57,6 +57,10 @@ int main(){
                 break;
 
             case 1: // ADD CUSTOMER TO PETSTORE
+                if(current_c_index >= C_SIZE){
+                    cout << "\nCannot enter more than " << C_SIZE << " customers!" << endl;
+                    break;
+                }
                 for(int i = 0; i < 10; i++)
                     customer_num_as_int[i] = 0;
                 cout << "\nADD CUSTOMER" << endl;
@@ -79,6 +83,10 @@ int main(){
                 break;
 
             case 2: // ADD PET TO PETSTORE
+                if(current_p_index >= P_SIZE){
+                    cout << "\nCannot enter more than " << P_SIZE << " pets!" << endl;
+                    break;
+                }
                 cout << "\nADD PET" << endl;
                 do{
                     cout << "Please enter species (max " << STR_SIZE << " characters):\t";
