@@ -1,7 +1,6 @@
 #ifndef PETSTORE_H
 #define PETSTORE_H
 
-#include <iostream>
 #include "CustomerClass.h"
 #include "PetClass.h"
 

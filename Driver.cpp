@@ -1,7 +1,5 @@
-#include "PetClass.h"
-#include "CustomerClass.h"
 #include "PetStoreClass.h"
-#include <cctype>
+// #include <cctype>
 
 int main(){
     PetStore petStore;
@@ -63,22 +61,23 @@ int main(){
                 }
                 for(int i = 0; i < 10; i++)
                     customer_num_as_int[i] = 0;
-                cout << "\nADD CUSTOMER" << endl;
-                cout << "Please Enter Name:\t\t\t";
+                cout << endl << string(20, '*') << " ADD CUSTOMER " << string(20, '*') << endl;
+                cout << "\nPlease Enter Name:\t\t\t";
                 cin.ignore();
                 getline(cin, temp_customer_name);
                 do{
-                    cout << "Please enter a TEN digit phone number:\t";
+                    cout << "\nPlease enter a TEN digit phone number:\t";
                     getline(cin, temp_customer_num);
                 }while(temp_customer_num.length() > 10);
-                cout << "Please enter age:\t\t\t";
+                cout << "\nPlease enter age:\t\t\t";
                 cin >> temp_customer_age;
-                cout << "Please enter in your max budget:\t$";
+                cout << "\nPlease enter in your max budget:\t$";
                 cin >> temp_customer_budget;
 
                 // convert string of phone number to int* of phone number
                 for(int i = 0; i < temp_customer_num.length(); i++)
                     customer_num_as_int[i] = int(temp_customer_num.at(i) - '0');
+
                 current_c_index = petStore.addCustomer(temp_customer_name, customer_num_as_int, temp_customer_age, temp_customer_budget, current_c_index);
                 break;
 
@@ -87,18 +86,18 @@ int main(){
                     cout << "\nCannot enter more than " << P_SIZE << " pets!" << endl;
                     break;
                 }
-                cout << "\nADD PET" << endl;
+                cout << endl << string(20, '*') << " ADD PET " << string(20, '*') << endl;
                 do{
-                    cout << "Please enter species (max " << STR_SIZE << " characters):\t";
+                    cout << "\nPlease enter species (max " << STR_SIZE << " characters):\t";
                     cin.ignore();
                     getline(cin, temp_pet_species);
                 }while(temp_pet_species.length() > STR_SIZE);
-                cout << "Please enter sex (M or F):\t\t\t";
+                cout << "\nPlease enter sex (M or F):\t\t\t";
                 cin >> temp_pet_sex;
                 temp_pet_sex = toupper(temp_pet_sex);
-                cout << "Please enter age:\t\t\t\t";
+                cout << "\nPlease enter age:\t\t\t\t";
                 cin >> temp_pet_age;
-                cout << "Please enter price:\t\t\t\t$";
+                cout << "\nPlease enter price:\t\t\t\t$";
                 cin >> temp_pet_price;
 
                 current_p_index = petStore.addPet(temp_pet_species, temp_pet_sex, temp_pet_age, temp_pet_price, current_p_index);
@@ -133,5 +132,6 @@ int main(){
         }
     }while(menuChoice != 6);
     
+    cin.clear();
     return 0;
 }

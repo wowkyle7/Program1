@@ -23,7 +23,6 @@ void PetStore::printAll(int c_index, int p_index){
 }
 
 int PetStore::addCustomer(string n, int* p, int a, double b, int index){
-        
         // Add Customer variables using constructor
         customer[index] = Customer(n,p,a,b);
 
@@ -41,10 +40,12 @@ int PetStore::addPet(string s, char g, int a, double p, int index){
 }
 
 int PetStore::deleteCustomer(int index){
+        customer[index] = Customer();
         return index-1;
 }
 
 int PetStore::deletePet(int index){
+        pet[index] = Pet();
         return index-1;
 }
 
