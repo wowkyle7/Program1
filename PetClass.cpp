@@ -17,7 +17,7 @@ Pet::Pet(string s, char g, int a, double p)
     species = new char[STR_SIZE];
     for(int i = 0; i < STR_SIZE; i++)
         species[i] = '\0';
-    for(int i = 0; i < s.length(); i++)
+    for(int i = 0; i < static_cast<int>(s.length()); i++)
         species[i] = s.at(i);
     sex = g; 
     age = a; 
@@ -32,7 +32,7 @@ Pet::~Pet(){
 string Pet::getSpecies() const
 {
     string s;
-    for(int i = 0; i < s.length(); i++)
+    for(int i = 0; i < static_cast<int>(s.length()); i++)
         s.at(i) = species[i];
     return species; 
 }
@@ -54,7 +54,7 @@ void Pet::setSpecies(string s){
     species = new char[STR_SIZE];
     for(int i = 0; i < STR_SIZE; i++)
         species[i] = '\0';
-    for(int i = 0; i < s.length(); i++)
+    for(int i = 0; i < static_cast<int>(s.length()); i++)
         species[i] = s.at(i);
 } 
 void Pet::setSex(char g){

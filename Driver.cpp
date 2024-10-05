@@ -68,14 +68,14 @@ int main(){
                 do{
                     cout << "\nPlease enter a TEN digit phone number:\t";
                     getline(cin, temp_customer_num);
-                }while(temp_customer_num.length() > 10);
+                }while(static_cast<int>(temp_customer_num.length()) > 10);
                 cout << "\nPlease enter age:\t\t\t";
                 cin >> temp_customer_age;
                 cout << "\nPlease enter in your max budget:\t$";
                 cin >> temp_customer_budget;
 
                 // convert string of phone number to int* of phone number
-                for(int i = 0; i < temp_customer_num.length(); i++)
+                for(int i = 0; i < static_cast<int>(temp_customer_num.length()); i++)
                     customer_num_as_int[i] = int(temp_customer_num.at(i) - '0');
 
                 current_c_index = petStore.addCustomer(temp_customer_name, customer_num_as_int, temp_customer_age, temp_customer_budget, current_c_index);
@@ -91,7 +91,7 @@ int main(){
                     cout << "\nPlease enter species (max " << STR_SIZE << " characters):\t";
                     cin.ignore();
                     getline(cin, temp_pet_species);
-                }while(temp_pet_species.length() > STR_SIZE);
+                }while(static_cast<int>(temp_pet_species.length()) > STR_SIZE);
                 cout << "\nPlease enter sex (M or F):\t\t\t";
                 cin >> temp_pet_sex;
                 temp_pet_sex = toupper(temp_pet_sex);
